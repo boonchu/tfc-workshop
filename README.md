@@ -72,3 +72,15 @@ All steps for the lab are contained there.
   * Deploy Datadog Agent with Helm `helm_release.datadog_agent`
   * Deploy IAM Polices for the Datadog AWS Intergration `aws_iam_policy.datadog_aws_integration`
   * Enable the Datadog AWS Intergration `datadog_integration_aws.sandbox`
+
+`kubectl get all -n storedog`
+
+  * Check LB URL from either terraform output or kubectl
+  * Check Datadog UI integration status from `Integration` -> `AWS`
+  * Check Datadog UI Metrics `Metrics` -> `Summary`
+    * Search for `aws.ec2.cpuutilization`
+    * In the upper-right corner of the details panel, click the Open in Metrics Explorer button.
+  * Check Datadog UI `Logs` -> `Search`
+  * Check Datadog UI `Dashboards` -> `Dashboard List`
+    * Search for `AWS EC2 Overview`
+  * Check Datadog UI `Infrastructure` -> `Kubernetes`
