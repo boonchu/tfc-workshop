@@ -55,9 +55,20 @@ All steps for the lab are contained there.
       * Create `Datadog` Variable Sets
         * Applied variables to three workspaces
         * Include Sensitive String of Terraform Variable `datadog_api_key` = XXX
+        * Include Sensitive String of Terraform Variable `datadog_app_key` = XXX
       * Create `Global Variable` Variable Sets
         * Applied variables to three workspaces
         * Include Terraform Variable `application_name` = `storedog`
         * Include Terraform Variable `eks_cluster_version` = `1.26`
         * Include Terraform Variable `org_name` = `aws-eks-datadog` # Whatever name is in your org...
 
+* Apply Change to first workspace `aws-eks` -> `New Run` -> `Plan and Apply`
+
+* Open AWS Console to check status of EKS cluster
+
+* Apply Change to second workspace `storedog-app`
+
+  * Deploy Storedog e-commernce application to the Kubernetes Cluster 
+  * Deploy Datadog Agent with Helm `helm_release.datadog_agent`
+  * Deploy IAM Polices for the Datadog AWS Intergration `aws_iam_policy.datadog_aws_integration`
+  * Enable the Datadog AWS Intergration `datadog_integration_aws.sandbox`
