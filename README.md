@@ -68,7 +68,6 @@ All steps for the lab are contained there.
 * Open AWS Console to check status of EKS cluster
 
 * Apply Change to the **second workspace** `storedog-app`
-
   * Deploy Storedog e-commernce application to the Kubernetes Cluster 
   * Deploy Datadog Agent with Helm `helm_release.datadog_agent`
   * Deploy IAM Polices for the Datadog AWS Intergration `aws_iam_policy.datadog_aws_integration`
@@ -87,11 +86,10 @@ All steps for the lab are contained there.
   * Check Datadog UI `Infrastructure` -> `Kubernetes`
 
 * Apply Change to the **third workspace** `datadog-resources`
-
   * what are we creating?
-    * Storedog dashboard
-    * Storedog monitor
+    * Storedog dashboard `datadog_dashboard.*`
+    * Storedog monitor  `datadog_monitor.*`
     * Service Definition for our store-frontend service
-    * API Synthetic Test on our Storedog address
+    * API Synthetic Test on our Storedog address `datadog_synthetics_test.*`
     * Browser Synthetic Test on our Storedog address
     * Browser Synthetic Test with steps on our Storedog address
