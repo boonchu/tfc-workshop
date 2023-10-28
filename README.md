@@ -93,3 +93,5 @@ All steps for the lab are contained there.
     * API Synthetic Test on our Storedog address `datadog_synthetics_test.*`
     * Browser Synthetic Test on our Storedog address
     * Browser Synthetic Test with steps on our Storedog address
+  * Check Datadog UI `Dashboards` -> `Storedog Dashboard`
+  * Check Datadog UI `Service Mgmt` -> `SLOs`
