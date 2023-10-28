@@ -34,3 +34,30 @@ Each folder contains does something different.
 ## Setup
 Proceed to the Datadog learning center and look for our lab `Introduction to monitoring AWS with Datadog & Terraform Cloud`
 All steps for the lab are contained there. 
+
+* Create three workspace (aws-eks, storedog-app, datadog-resources)
+  * **General**
+    * Set Terraform-Working-Directory to each workspace name for changing to sub folder in Github Project
+    * Only `aws-eks` share remote-state-sharing with other workspaces
+  * **VCS Control**
+    * Connect to VCS Github App with `Version-Control-Workflow`
+    * Choose `boonchu/tf-workshop``
+
+* Create Variable Sets for using in three workspace
+  * **Organization**
+    * Tab to `settings` -> `Variable Sets`
+      * Create `AWS` Variable Sets
+        * Applied varibles to three workspaces
+        * Include Terraform Variable `aws_region` = `eu-west-1`
+        * Include Terraform Variable `vpc_name` = `aws-workshop`
+        * Include Environment Variable `AWS_ACCESS_KEY_ID` = XXX
+        * Include Environment Variable `AWS_SECRET_ACCESS_KEY`= XXX
+      * Create `Datadog` Variable Sets
+        * Applied variables to three workspaces
+        * Include Sensitive String of Terraform Variable `datadog_api_key` = XXX
+      * Create `Global Variable` Variable Sets
+        * Applied variables to three workspaces
+        * Include Terraform Variable `application_name` = `storedog`
+        * Include Terraform Variable `eks_cluster_version` = `1.26`
+        * Include Terraform Variable `org_name` = `aws-eks-datadog` # Whatever name is in your org...
+
