@@ -38,7 +38,8 @@ All steps for the lab are contained there.
 * Create three workspace (aws-eks, storedog-app, datadog-resources)
   * **General**
     * Set Terraform-Working-Directory to each workspace name for changing to sub folder in Github Project
-    * Only `aws-eks` share remote-state-sharing with other workspaces
+    * Only `aws-eks` share remote-state-sharing with other workspaces (`storedog-app`, `datadog-resources`)
+    * Only `storedog-app` share remote-state-sharing with `datadog-resources`
   * **VCS Control**
     * Connect to VCS Github App with `Version-Control-Workflow`
     * Choose `boonchu/tf-workshop``
@@ -62,11 +63,11 @@ All steps for the lab are contained there.
         * Include Terraform Variable `eks_cluster_version` = `1.26`
         * Include Terraform Variable `org_name` = `aws-eks-datadog` # Whatever name is in your org...
 
-* Apply Change to first workspace `aws-eks` -> `New Run` -> `Plan and Apply`
+* Apply Change to the **first workspace** `aws-eks` -> `New Run` -> `Plan and Apply`
 
 * Open AWS Console to check status of EKS cluster
 
-* Apply Change to second workspace `storedog-app`
+* Apply Change to the **second workspace** `storedog-app`
 
   * Deploy Storedog e-commernce application to the Kubernetes Cluster 
   * Deploy Datadog Agent with Helm `helm_release.datadog_agent`
@@ -84,3 +85,13 @@ All steps for the lab are contained there.
   * Check Datadog UI `Dashboards` -> `Dashboard List`
     * Search for `AWS EC2 Overview`
   * Check Datadog UI `Infrastructure` -> `Kubernetes`
+
+* Apply Change to the **third workspace** `datadog-resources`
+
+  * what are we creating?
+    * Storedog dashboard
+    * Storedog monitor
+    * Service Definition for our store-frontend service
+    * API Synthetic Test on our Storedog address
+    * Browser Synthetic Test on our Storedog address
+    * Browser Synthetic Test with steps on our Storedog address
